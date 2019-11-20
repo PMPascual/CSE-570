@@ -1,0 +1,76 @@
+Script started on 2019-01-29 13:59:14-08:00
+bash-4.4$ g++ lab1.cpp
+bash-4.4$ a.out
+1 0 
+1 2 
+1 3 
+1 0 
+Enter string to analyze: 
+ababbbababa
+a b a b b b a b a b a 
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+index = 1 State = 2
+index = 1 State = 3
+index = 1 State = 0
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+
+String is not valid.
+bash-4.4$ a.out
+1 0 
+1 2 
+1 3 
+1 0 
+Enter string to analyze: 
+ababbbabaaabbbb
+a b a b b b a b a a a b b b b 
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+index = 1 State = 2
+index = 1 State = 3
+index = 1 State = 0
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+index = 0 State = 1
+index = 0 State = 1
+index = 1 State = 2
+index = 1 State = 3
+index = 1 State = 0
+index = 1 State = 0
+
+String is not valid.
+bash-4.4$ a.out
+1 0 
+1 2 
+1 3 
+1 0 
+Enter string to analyze: 
+ababbabbbbababb
+a b a b b a b b b b a b a b b 
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+index = 1 State = 2
+index = 1 State = 3
+index = 0 State = 1
+index = 1 State = 2
+index = 1 State = 3
+index = 1 State = 0
+index = 1 State = 0
+index = 0 State = 1
+index = 1 State = 2
+index = 0 State = 1
+index = 1 State = 2
+index = 1 State = 3
+
+String is valid.
+bash-4.4$ exit
+
+Script done on 2019-01-29 13:59:51-08:00

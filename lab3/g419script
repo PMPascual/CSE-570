@@ -1,0 +1,70 @@
+Script started on 2019-03-10 13:51:51-07:00
+bash-4.4$ make
+g++ -g -o lrz lrz.cpp -std=c++11
+bash-4.4$ lrz < g419
+Augmented Grammar
+-----------------
+'->S
+S->E
+E->E+T
+E->T
+T->T*F
+T->F
+F->(E)
+F->i
+
+Sets of LR(0) Items
+-------------------
+I0:
+	'->@S                goto(S)=I1
+	S->@E                goto(E)=I2
+	E->@E+T             
+	E->@T                goto(T)=I3
+	T->@T*F             
+	T->@F                goto(F)=I4
+	F->@(E)              goto(()=I5
+	F->@i                goto(i)=I6
+I1:
+	'->S@               
+I2:
+	S->E@               
+	E->E@+T              goto(+)=I7
+I3:
+	E->T@               
+	T->T@*F              goto(*)=I8
+I4:
+	T->F@               
+I5:
+	F->(@E)              goto(E)=I9
+	E->@E+T             
+	E->@T                goto(T)=I3
+	T->@T*F             
+	T->@F                goto(F)=I4
+	F->@(E)              goto(()=I5
+	F->@i                goto(i)=I6
+I6:
+	F->i@               
+I7:
+	E->E+@T              goto(T)=I10
+	T->@T*F             
+	T->@F                goto(F)=I4
+	F->@(E)              goto(()=I5
+	F->@i                goto(i)=I6
+I8:
+	T->T*@F              goto(F)=I11
+	F->@(E)              goto(()=I5
+	F->@i                goto(i)=I6
+I9:
+	F->(E@)              goto())=I12
+	E->E@+T              goto(+)=I7
+I10:
+	E->E+T@             
+	T->T@*F              goto(*)=I8
+I11:
+	T->T*F@             
+I12:
+	F->(E)@             
+
+bash-4.4$ exit
+
+Script done on 2019-03-10 13:51:59-07:00

@@ -1,0 +1,7 @@
+Phillip Pascual
+CSE 570
+Project
+
+1) added exit function by typing "exit"
+2) added the ability to use an answer for next part of the calc.
+3) variables can be printed and used in the calculator by defult.

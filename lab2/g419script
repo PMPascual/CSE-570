@@ -1,0 +1,36 @@
+Script started on 2019-02-06 14:29:43-08:00
+bash-4.4$ g++ lab2-a.cpp 
+bash-4.4$ a.out
+Terminals: 
+i + * ( ) 
+
+Nonterminals: 
+S E E T T F F 
+
+Productions: 
+S->E
+E->E+T
+E->T
+T->T*F
+T->F
+F->(E)
+F->i
+
+Firsts(() = {( }
+Firsts()) = {) }
+Firsts(*) = {* }
+Firsts(+) = {+ }
+Firsts(E) = {( i }
+Firsts(F) = {( i }
+Firsts(S) = {( i }
+Firsts(T) = {( i }
+Firsts(i) = {i }
+
+
+Follows(*) = {( i }
+Follows(+) = {( i }
+Follows(E) = {) }
+Follows(S) = {$ }
+bash-4.4$ exit
+
+Script done on 2019-02-06 14:29:54-08:00

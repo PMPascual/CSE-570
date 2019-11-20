@@ -1,0 +1,105 @@
+Script started on 2019-03-10 13:51:28-07:00
+bash-4.4$ make
+g++ -g -o lrz lrz.cpp -std=c++11
+bash-4.4$ lrz < g417
+Augmented Grammar
+-----------------
+'->E
+E->TD
+D->+TD
+D->e
+T->FU
+U->*FU
+U->e
+F->(E)
+F->I
+I->x
+I->y
+I->z
+
+Sets of LR(0) Items
+-------------------
+I0:
+	'->@E                goto(E)=I1
+	E->@TD               goto(T)=I2
+	D->@+TD              goto(+)=I3
+	D->@e                goto(e)=I4
+	T->@FU               goto(F)=I5
+	U->@*FU              goto(*)=I6
+	U->@e               
+	F->@(E)              goto(()=I7
+	F->@I                goto(I)=I8
+	I->@x                goto(x)=I9
+	I->@y                goto(y)=I10
+	I->@z                goto(z)=I11
+I1:
+	'->E@               
+I2:
+	E->T@D               goto(D)=I12
+	D->@+TD              goto(+)=I3
+	D->@e                goto(e)=I4
+I3:
+	D->+@TD              goto(T)=I13
+	T->@FU               goto(F)=I5
+	F->@(E)              goto(()=I7
+	F->@I                goto(I)=I8
+	I->@x                goto(x)=I9
+	I->@y                goto(y)=I10
+	I->@z                goto(z)=I11
+I4:
+	D->e@               
+	U->e@               
+I5:
+	T->F@U               goto(U)=I14
+	U->@*FU              goto(*)=I6
+	U->@e                goto(e)=I15
+I6:
+	U->*@FU              goto(F)=I16
+	F->@(E)              goto(()=I7
+	F->@I                goto(I)=I8
+	I->@x                goto(x)=I9
+	I->@y                goto(y)=I10
+	I->@z                goto(z)=I11
+I7:
+	F->(@E)              goto(E)=I17
+	E->@TD               goto(T)=I2
+	T->@FU               goto(F)=I5
+	F->@(E)              goto(()=I7
+	F->@I                goto(I)=I8
+	I->@x                goto(x)=I9
+	I->@y                goto(y)=I10
+	I->@z                goto(z)=I11
+I8:
+	F->I@               
+I9:
+	I->x@               
+I10:
+	I->y@               
+I11:
+	I->z@               
+I12:
+	E->TD@              
+I13:
+	D->+T@D              goto(D)=I18
+	D->@+TD              goto(+)=I3
+	D->@e                goto(e)=I4
+I14:
+	T->FU@              
+I15:
+	U->e@               
+I16:
+	U->*F@U              goto(U)=I19
+	U->@*FU              goto(*)=I6
+	U->@e                goto(e)=I15
+I17:
+	F->(E@)              goto())=I20
+I18:
+	D->+TD@             
+I19:
+	U->*FU@             
+I20:
+	F->(E)@             
+
+bash-4.4$ exit
+
+Script done on 2019-03-10 13:51:36-07:00
